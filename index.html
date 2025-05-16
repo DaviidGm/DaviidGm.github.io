@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portafolio Personal - Desarrollador</title>
+<!-- FontAwesome CDN for icons -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e7f0fb;
+    color: #0a2540;
+    scroll-behavior: smooth;
+  }
+
+  a {
+    color: #0056b3;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    background: #003f7d;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.15);
+    z-index: 1000;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav ul li a {
+    color: #bcd0fc;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background-color: #0056b3;
+    color: #ffffff;
+  }
+
+  main {
+    padding-top: 100px;
+    max-width: 1000px;
+    margin: 0 auto 4rem auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section {
+    margin-bottom: 4rem;
+  }
+
+  h1, h2, h3 {
+    color: #003f7d;
+  }
+
+  /* Inicio section */
+
+  #inicio {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+    background: #d7e3fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0 63 125 / 0.1);
+  }
+
+  #inicio img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #0056b3;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgb(0 63 125 / 0.2);
+  }
+
+  #inicio .intro-text {
+    flex: 1 1 300px;
+  }
+
+  #inicio .intro-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  #inicio .intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #253858;
+  }
+
+  /* Projects section */
+
+  #proyectos .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: #d7e3fc;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 63 125 / 0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid #0056b3;
+  }
+
+  .project-title {
+    margin: 0.5rem 0 0.25rem 0;
+    font-weight: 700;
+    color: #003f7d;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    color: #253858;
+  }
+
+  /* Experience sections */
+
+  .experience-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .experience-list li {
+    background: #d7e3fc;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 63 125 / 0.15);
+  }
+
+  .experience-list li h3 {
+    margin-top: 0;
+    font-weight: 700;
+  }
+
+  .experience-list li small {
+    color: #375a9c;
+    font-style: italic;
+  }
+
+  /* Section icons */
+
+  .section-icon {
+    color: #0056b3;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* Footer */
+
+  footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #003f7d;
+    color: #bcd0fc;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 10px rgb(0 0 0 / 0.15);
+  }
+
+  /* Responsive */
+
+  @media (max-width: 600px) {
+    #inicio {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #inicio img {
+      margin-bottom: 1rem;
+    }
+
+    nav ul {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav aria-label="Navegación principal">
+      <div class="brand" tabindex="0">Mi Portafolio</div>
+      <ul>
+        <li><a href="#inicio"><i class="fas fa-home section-icon" aria-hidden="true"></i>Inicio</a></li>
+        <li><a href="#proyectos"><i class="fas fa-code section-icon" aria-hidden="true"></i>Proyectos</a></li>
+        <li><a href="#experiencia-academica"><i class="fas fa-graduation-cap section-icon" aria-hidden="true"></i>Experiencia Académica</a></li>
+        <li><a href="#experiencia-personal"><i class="fas fa-briefcase section-icon" aria-hidden="true"></i>Experiencia Personal</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="inicio" tabindex="0" aria-label="Sección de inicio">
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Foto personal" />
+    <div class="intro-text">
+      <h1>Hola, soy David Guerrerp</h1>
+      <p>Desarrollador web y apasionado por crear soluciones tecnológicas que hacen la vida más fácil. Bienvenido a mi portafolio personal donde comparto mis proyectos y experiencias.</p>
+    </div>
+  </section>
+
+  <section id="proyectos" tabindex="0" aria-label="Sección de proyectos">
+    <h2><i class="fas fa-code section-icon" aria-hidden="true"></i>Proyectos</h2>
+    <div class="project-list">
+      <article class="project-card" tabindex="0">
+        <img class="project-image" src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Proyecto 1" />
+        <h3 class="project-title">Aplicación de Tareas</h3>
+        <p class="project-description">Aplicación web para gestionar tareas diarias con autenticación y listas personalizadas.</p>
+      </article>
+      <article class="project-card" tabindex="0">
+        <img class="project-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Proyecto 2" />
+        <h3 class="project-title">Sitio Portafolio</h3>
+        <p class="project-description">Sitio web responsive utilizado para mostrar mi perfil profesional y proyectos destacados.</p>
+      </article>
+      <article class="project-card" tabindex="0">
+        <img class="project-image" src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Proyecto 3" />
+        <h3 class="project-title">Blog Personal</h3>
+        <p class="project-description">Plataforma para compartir artículos técnicos y experiencias de desarrollo.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="experiencia-academica" tabindex="0" aria-label="Sección de experiencia académica">
+    <h2><i class="fas fa-graduation-cap section-icon" aria-hidden="true"></i>Experiencia Académica</h2>
+    <ul class="experience-list">
+      <li tabindex="0">
+        <h3>Ingeniería en Sistemas</h3>
+        <small>Universidad Nacional - 2016 a 2021</small>
+        <p>Formación integral en desarrollo de software, bases de datos, y sistemas distribuidos.</p>
+      </li>
+      <li tabindex="0">
+        <h3>Curso de Desarrollo Web Full Stack</h3>
+        <small>Platzi - 2022</small>
+        <p>Especialización en tecnologías frontend y backend utilizando React, Node.js y bases de datos NoSQL.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="experiencia-personal" tabindex="0" aria-label="Sección de experiencia personal">
+    <h2><i class="fas fa-briefcase section-icon" aria-hidden="true"></i>Experiencia Personal</h2>
+    <ul class="experience-list">
+      <li tabindex="0">
+        <h3>Desarrollador Frontend</h3>
+        <small>Empresa XYZ - 2022 a presente</small>
+        <p>Diseño y desarrollo de interfaces web modernas y adaptativas para clientes internacionales.</p>
+      </li>
+      <li tabindex="0">
+        <h3>Freelancer</h3>
+        <small>Autónomo - 2020 a 2022</small>
+        <p>Proyectos variados con pequeños negocios, desarrollando sitios web y aplicaciones simples.</p>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>© 2024 David Guerrero - Desarrollador Web</p>
+</footer>
+</body>
+</html>
+
