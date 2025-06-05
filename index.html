@@ -1,321 +1,597 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portafolio Personal - Desarrollador</title>
-<!-- FontAwesome CDN for icons -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  rel="stylesheet"
-/>
-<style>
-  /* Reset and base */
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #e7f0fb;
-    color: #0a2540;
-    scroll-behavior: smooth;
-  }
-
-  a {
-    color: #0056b3;
-    text-decoration: none;
-  }
-
-  a:hover,
-  a:focus {
-    text-decoration: underline;
-  }
-
-  header {
-    position: fixed;
-    width: 100%;
-    background: #003f7d;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 10px rgb(0 0 0 / 0.15);
-    z-index: 1000;
-  }
-
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  nav .brand {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #ffffff;
-  }
-
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  nav ul li a {
-    color: #bcd0fc;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-
-  nav ul li a:hover,
-  nav ul li a:focus {
-    background-color: #0056b3;
-    color: #ffffff;
-  }
-
-  main {
-    padding-top: 100px;
-    max-width: 1000px;
-    margin: 0 auto 4rem auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  section {
-    margin-bottom: 4rem;
-  }
-
-  h1, h2, h3 {
-    color: #003f7d;
-  }
-
-  /* Inicio section */
-
-  #inicio {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding: 2rem 1rem;
-    background: #d7e3fc;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgb(0 63 125 / 0.1);
-  }
-
-  #inicio img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid #0056b3;
-    object-fit: cover;
-    box-shadow: 0 4px 15px rgb(0 63 125 / 0.2);
-  }
-
-  #inicio .intro-text {
-    flex: 1 1 300px;
-  }
-
-  #inicio .intro-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.25rem;
-  }
-
-  #inicio .intro-text p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #253858;
-  }
-
-  /* Projects section */
-
-  #proyectos .project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 1.5rem;
-  }
-
-  .project-card {
-    background: #d7e3fc;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgb(0 63 125 / 0.15);
-    transition: transform 0.3s ease;
-  }
-
-  .project-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .project-image {
-    width: 100%;
-    height: 150px;
-    border-radius: 6px;
-    object-fit: cover;
-    border: 2px solid #0056b3;
-  }
-
-  .project-title {
-    margin: 0.5rem 0 0.25rem 0;
-    font-weight: 700;
-    color: #003f7d;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-    color: #253858;
-  }
-
-  /* Experience sections */
-
-  .experience-list {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .experience-list li {
-    background: #d7e3fc;
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgb(0 63 125 / 0.15);
-  }
-
-  .experience-list li h3 {
-    margin-top: 0;
-    font-weight: 700;
-  }
-
-  .experience-list li small {
-    color: #375a9c;
-    font-style: italic;
-  }
-
-  /* Section icons */
-
-  .section-icon {
-    color: #0056b3;
-    margin-right: 0.5rem;
-    vertical-align: middle;
-  }
-
-  /* Footer */
-
-  footer {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    background: #003f7d;
-    color: #bcd0fc;
-    font-size: 0.9rem;
-    box-shadow: 0 -2px 10px rgb(0 0 0 / 0.15);
-  }
-
-  /* Responsive */
-
-  @media (max-width: 600px) {
-    #inicio {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    #inicio img {
-      margin-bottom: 1rem;
-    }
-
-    nav ul {
-      gap: 1rem;
-      font-size: 0.9rem;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Andrés Guerrero | Portafolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --primary-medium: #172a45;
+            --primary-light: #303f60;
+            --accent-color: #64ffda;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: rgba(10, 25, 47, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        main {
+            margin-top: 80px;
+        }
+        
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .hero p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent-color);
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: var(--primary-medium);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-info p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-item {
+            background-color: var(--primary-light);
+            color: var(--accent-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-links a {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .project-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .experience-item {
+            background-color: var(--primary-medium);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            position: relative;
+            border-left: 2px solid var(--accent-color);
+        }
+        
+        .experience-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-item .date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-item .company {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .experience-item .company i {
+            margin-right: 0.5rem;
+        }
+        
+        .experience-item p {
+            color: var(--text-secondary);
+        }
+        
+        footer {
+            background-color: var(--primary-medium);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                padding: 1rem 0;
+                text-align: center;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+                color: var(--text-primary);
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <nav aria-label="Navegación principal">
-      <div class="brand" tabindex="0">Mi Portafolio</div>
-      <ul>
-        <li><a href="#inicio"><i class="fas fa-home section-icon" aria-hidden="true"></i>Inicio</a></li>
-        <li><a href="#proyectos"><i class="fas fa-code section-icon" aria-hidden="true"></i>Proyectos</a></li>
-        <li><a href="#experiencia-academica"><i class="fas fa-graduation-cap section-icon" aria-hidden="true"></i>Experiencia Académica</a></li>
-        <li><a href="#experiencia-personal"><i class="fas fa-briefcase section-icon" aria-hidden="true"></i>Experiencia Personal</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-  <section id="inicio" tabindex="0" aria-label="Sección de inicio">
-    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Foto personal" />
-    <div class="intro-text">
-      <h1>Hola, soy David Guerrero</h1>
-      <p>Desarrollador web y apasionado por crear soluciones tecnológicas que hacen la vida más fácil. Bienvenido a mi portafolio personal donde comparto mis proyectos y experiencias.</p>
-    </div>
-  </section>
-
-  <section id="proyectos" tabindex="0" aria-label="Sección de proyectos">
-    <h2><i class="fas fa-code section-icon" aria-hidden="true"></i>Proyectos</h2>
-    <div class="project-list">
-      <article class="project-card" tabindex="0">
-        <img class="project-image" src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Proyecto 1" />
-        <h3 class="project-title">Aplicación de Tareas</h3>
-        <p class="project-description">Aplicación web para gestionar tareas diarias con autenticación y listas personalizadas.</p>
-      </article>
-      <article class="project-card" tabindex="0">
-        <img class="project-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Proyecto 2" />
-        <h3 class="project-title">Sitio Portafolio</h3>
-        <p class="project-description">Sitio web responsive utilizado para mostrar mi perfil profesional y proyectos destacados.</p>
-      </article>
-      <article class="project-card" tabindex="0">
-        <img class="project-image" src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Proyecto 3" />
-        <h3 class="project-title">Blog Personal</h3>
-        <p class="project-description">Plataforma para compartir artículos técnicos y experiencias de desarrollo.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="experiencia-academica" tabindex="0" aria-label="Sección de experiencia académica">
-    <h2><i class="fas fa-graduation-cap section-icon" aria-hidden="true"></i>Experiencia Académica</h2>
-    <ul class="experience-list">
-      <li tabindex="0">
-        <h3>Ingeniería en Sistemas</h3>
-        <small>Universidad Nacional - 2016 a 2021</small>
-        <p>Formación integral en desarrollo de software, bases de datos, y sistemas distribuidos.</p>
-      </li>
-      <li tabindex="0">
-        <h3>Curso de Desarrollo Web Full Stack</h3>
-        <small>Platzi - 2022</small>
-        <p>Especialización en tecnologías frontend y backend utilizando React, Node.js y bases de datos NoSQL.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="experiencia-personal" tabindex="0" aria-label="Sección de experiencia personal">
-    <h2><i class="fas fa-briefcase section-icon" aria-hidden="true"></i>Experiencia Personal</h2>
-    <ul class="experience-list">
-      <li tabindex="0">
-        <h3>Desarrollador Frontend</h3>
-        <small>Empresa XYZ - 2022 a presente</small>
-        <p>Diseño y desarrollo de interfaces web modernas y adaptativas para clientes internacionales.</p>
-      </li>
-      <li tabindex="0">
-        <h3>Freelancer</h3>
-        <small>Autónomo - 2020 a 2022</small>
-        <p>Proyectos variados con pequeños negocios, desarrollando sitios web y aplicaciones simples.</p>
-      </li>
-    </ul>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 David Guerrero - Desarrollador Web</p>
-</footer>
+    <header>
+        <nav>
+            <a href="#" class="logo">David Guerrero</a>
+            <ul class="nav-links">
+                <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#proyectos"><i class="fas fa-code"></i> Proyectos</a></li>
+                <li><a href="#academica"><i class="fas fa-graduation-cap"></i> Experiencia Académica</a></li>
+                <li><a href="#personal"><i class="fas fa-briefcase"></i> Experiencia Profesional</a></li>
+                <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Hola, mi nombre es</h1>
+                <h2>David Andrés Guerrero.</h2>
+                <h2>Desarrollo soluciones digitales.</h2>
+                <p>Soy un desarrollador especializado en [tus tecnologías o áreas de expertise] con experiencia en crear aplicaciones y sistemas de alta calidad que resuelven problemas reales y brindan excelentes experiencias de usuario.</p>
+                <a href="#proyectos" class="btn">Ver mis proyectos</a>
+            </div>
+        </section>
+        
+        <section id="proyectos">
+            <div class="section-title">
+                <h2><i class="fas fa-code"></i> Mis Proyectos</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Proyecto 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Aplicación Web de Gestión</h3>
+                        <p>Plataforma completa para gestión de proyectos con dashboard interactivo, autenticación de usuarios y generación de reportes.</p>
+                        <div class="project-tech">
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Express</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Proyecto 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce Responsive</h3>
+                        <p>Tienda online con carrito de compras, pasarela de pagos integrada y panel de administración para gestión de productos.</p>
+                        <div class="project-tech">
+                            <span class="tech-item">Vue.js</span>
+                            <span class="tech-item">Firebase</span>
+                            <span class="tech-item">Stripe API</span>
+                            <span class="tech-item">SCSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Proyecto 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>App Móvil de Noticias</h3>
+                        <p>Aplicación móvil que agrega noticias de múltiples fuentes usando APIs, con sistema de favoritos y notificaciones push.</p>
+                        <div class="project-tech">
+                            <span class="tech-item">React Native</span>
+                            <span class="tech-item">Redux</span>
+                            <span class="tech-item">News API</span>
+                            <span class="tech-item">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="academica">
+            <div class="section-title">
+                <h2><i class="fas fa-graduation-cap"></i> Experiencia Académica</h2>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Ingeniería en Sistemas Computacionales</h3>
+                <div class="date">2018 - 2023</div>
+                <div class="company"><i class="fas fa-university"></i> Universidad Tecnológica</div>
+                <p>Especialización en desarrollo de software y arquitectura de sistemas. Tesis sobre inteligencia artificial aplicada a sistemas de recomendación.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Bootcamp Desarrollo Full Stack</h3>
+                <div class="date">2022</div>
+                <div class="company"><i class="fas fa-laptop-code"></i> Academia Digital</div>
+                <p>Programa intensivo de 6 meses enfocado en las tecnologías más demandadas del mercado: JavaScript, React, Node.js, bases de datos y despliegue de aplicaciones.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Certificación en Cloud Computing</h3>
+                <div class="date">2021</div>
+                <div class="company"><i class="fas fa-cloud"></i> Plataforma de Certificación</div>
+                <p>Certificado profesional en servicios en la nube con enfoque en arquitectura de soluciones escalables y seguras.</p>
+            </div>
+        </section>
+        
+        <section id="personal">
+            <div class="section-title">
+                <h2><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Desarrollador Full Stack</h3>
+                <div class="date">2021 - Presente</div>
+                <div class="company"><i class="fas fa-building"></i> Tech Solutions Inc.</div>
+                <p>Desarrollo y mantenimiento de aplicaciones web empresariales usando tecnologías modernas. Colaboración en equipos ágiles para implementar nuevas funcionalidades y optimizar procesos.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Desarrollador Frontend</h3>
+                <div class="date">2019 - 2021</div>
+                <div class="company"><i class="fas fa-desktop"></i> Agencia Digital Creativa</div>
+                <p>Creación de interfaces de usuario atractivas y funcionales para clientes de diversos sectores. Implementación de diseños responsive y optimización de performance.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Practicante de Desarrollo</h3>
+                <div class="date">2018 - 2019</div>
+                <div class="company"><i class="fas fa-code"></i> Startup Innovadora</div>
+                <p>Participación en el desarrollo del producto principal de la empresa, aprendiendo buenas prácticas de programación y trabajo en equipo.</p>
+            </div>
+        </section>
+        
+        <section id="contacto">
+            <div class="section-title">
+                <h2><i class="fas fa-envelope"></i> Contacto</h2>
+            </div>
+            
+            <form action="#" method="POST" style="max-width: 600px; margin: 0 auto;">
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Nombre</label>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; background-color: var(--primary-medium); border: 1px solid var(--primary-light); border-radius: 4px; color: var(--text-primary);">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Email</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; background-color: var(--primary-medium); border: 1px solid var(--primary-light); border-radius: 4px; color: var(--text-primary);">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="message" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.8rem; background-color: var(--primary-medium); border: 1px solid var(--primary-light); border-radius: 4px; color: var(--text-primary);"></textarea>
+                </div>
+                
+                <button type="submit" class="btn" style="display: block; width: 100%;">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 David Andrés Guerrero. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Menú hamburguesa para móviles
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Efecto smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
-
